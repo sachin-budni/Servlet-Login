@@ -1,0 +1,33 @@
+<html>
+	<head>
+	</head>
+	<body style="text-align: center;margin-top: 120px;">
+		<form action="Register">
+			FirstName :<input type="text" name="firstName" placeholder="First Name" required="required"/><br/>
+			LastName :<input type="text" name="lastName" placeholder="Last Name" required="required"/><br/>
+			Mobile Number :<input type="number" name="mobileNo" placeholder="Mobile Number" required="required"/><br/>
+			Email :<input type="email" name="email" placeholder="Email" required="required"/><br/>
+			Password :<input type="password" name="password" placeholder="Password" required="required"/><br/>
+			ConformPassword :<input type="password" name="conformPassword" placeholder="Conform Password" required="required" onkeyup="called()"/><span id="pass"></span><br/>
+			<input type="submit" value="Register" id="subs"/>
+		</form>
+		<script type="text/javascript">
+			function called()
+			{
+				
+				var password=document.forms[0].password;
+				var conformPassword=document.forms[0].conformPassword;
+				if(password.value!=conformPassword.value)
+				{
+					document.getElementById('pass').innerHTML="Password is Not Match";
+					document.getElementById('subs').disabled=true;
+				}
+				if(password.value==conformPassword.value)
+				{
+					document.getElementById('pass').innerHTML="Yes!";
+					document.getElementById('subs').disabled=false;
+				}
+			}
+		</script>
+	</body>
+</html>
