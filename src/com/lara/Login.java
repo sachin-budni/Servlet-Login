@@ -47,7 +47,9 @@ public class Login extends HttpServlet
 			}
 			if(status)
 			{
-				out.println("Login Successfully");
+				out.println("Login successfully");
+				RequestDispatcher rd=request.getRequestDispatcher("Profile");
+				rd.forward(request, response);
 			}
 			else
 			{
